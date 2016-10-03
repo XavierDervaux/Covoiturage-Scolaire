@@ -1,0 +1,67 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="covoiturage.PrincipalWindow"
+	x:Name="Window"
+	Title="Window1"
+	Width="973" Height="633" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+    <Grid x:Name="Programme" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FFF7F7FA">
+        <Rectangle Height="65" Stroke="#FFD9D9D9" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCFCFCF" Offset="1"/>
+                    <GradientStop Color="#FFDADADA"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Fill="#FF949294" Height="1" Margin="0,64,0,0" Stroke="#FF949294" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+        <Rectangle x:Name="backgroundLogo" HorizontalAlignment="Left" Height="66.25" Margin="0.167,0,0,0" Stroke="#FFC72038" VerticalAlignment="Top" Width="70.166" Fill="#FFC72038"/>
+        <Rectangle Fill="#FF949294" HorizontalAlignment="Left" Height="64" Margin="70.333,0,0,0" Stroke="#FF949294" VerticalAlignment="Top" Width="1.126"/>
+        <Image x:Name="logo_voiture" Margin="10,15,0,0" Source="images/voiture.png" Stretch="Fill" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48"/>
+        <Image x:Name="logo_passager" Margin="15,15,0,0" Source="images/pieton.png" Stretch="Fill" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="38" Visibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="83,19,0,0" TextWrapping="Wrap" Text="Bienvenue," VerticalAlignment="Top" Width="96" FontSize="18.667" Foreground="Black"/>
+        <Image Margin="0,17,10.25,0" Source="images/offline.png" Stretch="Fill" MaxWidth="35" MaxHeight="35" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35"/>
+        <Image Margin="0,16,70.431,0" Source="images/setting.png" Stretch="Fill" HorizontalAlignment="Right" VerticalAlignment="Top" Width="35" Height="35" MaxWidth="35" MaxHeight="35"/>
+        <Image Margin="0,17,129.329,0" Source="images/notification.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Width="45" Height="35" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <Rectangle x:Name="bandeau_admin" Height="35" Stroke="#FFC72038" VerticalAlignment="Top" Margin="0.167,64.5,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC72038" Offset="0.043"/>
+                    <GradientStop Color="#FFE12A45" Offset="0.915"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock x:Name="txt_nomUtil" HorizontalAlignment="Left" Height="30" Margin="184,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Foreground="Black" FontSize="18"/>
+        <DataGrid x:Name="datagrid_utilisateur" MinWidth="965" MinHeight="505" Margin="0,99.5,0,-2.5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <EventSetter Event="MouseDoubleClick" Handler="resultDataGrid_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+        <Canvas x:Name="ongletAdmin" HorizontalAlignment="Left" Height="34.5" VerticalAlignment="Top" Width="964.833" Margin="0.167,65,0,0" Visibility="Hidden" d:IsLocked="True">
+            <Button x:Name="but_addMembre" Content="Ajouter Membre" HorizontalAlignment="Left" Height="35.331" VerticalAlignment="Top" Width="120.25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Raavi" FontWeight="Bold" Canvas.Left="69.833" Canvas.Top="-1" Padding="5,1" Click="but_addMembre_Click"/>
+        </Canvas>
+        <Canvas x:Name="ongletConducteur" HorizontalAlignment="Left" Height="34.5" VerticalAlignment="Top" Width="964.833" Margin="0.167,65,0,0" Visibility="Hidden" d:IsLocked="True">
+            <Button x:Name="but_addTrajet" Content="Ajouter un trajet" HorizontalAlignment="Left" Height="35.331" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Raavi" FontWeight="Bold" Canvas.Left="69.833" Canvas.Top="-1" Padding="5,1" Click="but_addTrajet_Click" />
+            <Button x:Name="but_voirTrajet" Content="Mes trajets" HorizontalAlignment="Left" Height="35.331" VerticalAlignment="Top" Width="80" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Raavi" FontWeight="Bold" Canvas.Left="190.753" Padding="5,1" Canvas.Top="-1" Click="but_voirTrajet_Click"/>
+        </Canvas>
+        <Canvas x:Name="ongletPassager" HorizontalAlignment="Left" Height="34.5" VerticalAlignment="Top" Width="964.833" Margin="0.167,65,0,0" Visibility="Hidden">
+            <Button x:Name="but_participation" Content="Mes participations" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="130" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Center" FontFamily="Raavi" FontWeight="Bold" Canvas.Left="70" Canvas.Top="-1" Padding="5,1" Click="but_participation_Click" />
+        </Canvas>
+        <Button x:Name="but_offline" Content="" HorizontalAlignment="Right" Height="64" VerticalAlignment="Top" Width="56.667" Background="Black" BorderBrush="Black" Foreground="{x:Null}" Click="but_offline_Click" OpacityMask="Black" Opacity="0.115"/>
+        <Button x:Name="but_parametre" Content="" HorizontalAlignment="Right" Height="64" Margin="0,0,56.667,0" VerticalAlignment="Top" Width="63.333" Opacity="0.12" Background="#FF04868C" BorderBrush="#FF04868C" Click="but_parametre_Click"/>
+        <Button x:Name="but_notification" Content="" HorizontalAlignment="Right" Height="64.97" Margin="0,-0.47,120,0" VerticalAlignment="Top" Width="64.393" BorderBrush="#FFA4A0A0" Opacity="0.2" Background="#FFA4A0A0" Click="but_notification_Click"/>
+        <Canvas x:Name="notification" HorizontalAlignment="Right" Margin="0,64,0,-2" Width="500" Opacity="0.95" Background="#FFCFCFCF" Visibility="Hidden">
+            <DataGrid x:Name="datagrid_notification" Height="540" Width="500" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" OpacityMask="#FFF0F0F0">
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <EventSetter Event="MouseDoubleClick" Handler="Notification_MouseDoubleClick"/>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+        </Canvas>
+    </Grid>
+</Window>

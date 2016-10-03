@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="covoiturage.MainWindow"
+        Title="Connexion CondoCars" Height="400" Width="350" HorizontalContentAlignment="Center" MaxWidth="350" MaxHeight="400" MinWidth="350" MinHeight="400" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" Visibility="Visible" BorderThickness="0" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid Background="#FFF7F7FA">
+        <Image Margin="30,0,32,273.291" Source="images/logo.png" Stretch="Fill" d:IsLocked="True"/>
+        <Image Source="images/logo ecampus.png" Stretch="Fill" Margin="-62.667,132.435,129.5,-74.291" Opacity="0.7" d:IsLocked="True">
+            <Image.Effect>
+                <BlurEffect Radius="15" RenderingBias="Quality"/>
+            </Image.Effect>
+        </Image>
+        <Canvas x:Name="connexion" HorizontalAlignment="Left" Height="268.291" Margin="10,101.709,0,0" VerticalAlignment="Top" Width="321" d:IsLocked="True">
+            <TextBox x:Name="boxIdentification" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" VerticalContentAlignment="Center" SelectionBrush="#FF04868C" BorderBrush="#FF949294" Canvas.Left="20" Canvas.Top="68" Opacity="0.7" Padding="0" HorizontalContentAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.291" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Canvas.Left="20" Canvas.Top="45.709"><Run Text="IDENTIFICATION ("/><Run Text="e"/><Run Text="mail Condorcet)"/></TextBlock>
+            <PasswordBox x:Name="boxMdp" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="280" BorderBrush="#FF949294" VerticalContentAlignment="Center" SelectionBrush="#FF04868C" Canvas.Left="20" Canvas.Top="128.333" Opacity="0.7" Padding="0" HorizontalContentAlignment="Center">
+                <PasswordBox.CaretBrush>
+                    <ImageBrush/>
+                </PasswordBox.CaretBrush>
+            </PasswordBox>
+            <TextBlock HorizontalAlignment="Left" Height="22.291" TextWrapping="Wrap" Text="MOT DE PASSE" VerticalAlignment="Top" Width="280" Canvas.Left="20" Canvas.Top="106.709"/>
+            <Button x:Name="but_connecion" Content="CONNEXION" HorizontalAlignment="Center" Height="35" VerticalAlignment="Center" Width="100" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="200.5" Canvas.Top="191.25" FontWeight="Bold" Click="but_connecion_Click" Background="#FFFF304E"/>
+            <Button x:Name="but_mdp_oublie" Content="Mot de passe oublié ?" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="125" BorderBrush="#FFF7F7FA" Background="#FFF7F7FA" HorizontalContentAlignment="Right" Canvas.Left="175" Canvas.Top="159" Click="but_mdp_oublie_Click"/>
+            <TextBlock HorizontalAlignment="Center" Height="22.291" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" Canvas.Left="20" Canvas.Top="6.709" Background="#FF04868C" FontWeight="SemiBold" TextAlignment="Center" Foreground="White" TextDecorations="{x:Null}" Margin="0" Padding="0,0.5,0,0" FontSize="14.667"><Run Text="Connexion à "/><Run Text="C"/><Run Text="ondo "/><Run Text="C"/><Run Text="ars"/></TextBlock>
+            <StackPanel x:Name="stackStatut" Orientation="Horizontal" Height="29.5" Canvas.Left="19.25" Canvas.Top="201.791" Width="118.391">
+                <RadioButton x:Name="radioConducteur" Content="" HorizontalAlignment="Left" Height="15.333" VerticalAlignment="Top" Width="73.215" RenderTransformOrigin="-3.892,0.522"/>
+                <RadioButton x:Name="radioPassager" Content="" HorizontalAlignment="Left" Height="15.333" VerticalAlignment="Top" Width="49.465" IsChecked="True"/>
+            </StackPanel>
+            <Image Source="images/voiture.png" Stretch="Fill" Height="33.299" Canvas.Left="37.899" Canvas.Top="193.041" Width="39.33"/>
+            <Image Source="images/pieton.png" Stretch="Fill" Height="33.299" Canvas.Left="109.275" Canvas.Top="191.791" Width="26.366"/>
+        </Canvas>
+        <Canvas x:Name="reinitialiser" HorizontalAlignment="Left" Height="258.291" Margin="10,101.709,0,0" VerticalAlignment="Top" Width="321" d:IsHidden="True">
+            <TextBox x:Name="box_email" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionBrush="#FFFF304E" BorderBrush="#FF949294" Canvas.Left="20" Canvas.Top="68.291" Opacity="0.7"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.291" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Canvas.Left="20" Canvas.Top="46" Text="ADRESSE EMAIL"/>
+            <TextBox x:Name="box_regNat" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionBrush="#FFFF304E" BorderBrush="#FF949294" Canvas.Left="20" Canvas.Top="128.582" Opacity="0.7"/>
+            <TextBlock HorizontalAlignment="Left" Height="22.291" TextWrapping="Wrap" VerticalAlignment="Top" Width="280" Canvas.Left="20" Canvas.Top="106.291" Text="NUMERO REGISTRE NATIONAL"/>
+            <Button Content="RÉINITIALISER" HorizontalAlignment="Center" Height="35" VerticalAlignment="Center" Width="100" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="201.167" Canvas.Top="191.25" FontWeight="Bold" Click="but_REINITIALISER_Click"/>
+            <Button x:Name="but_retour" Content="&lt;" HorizontalAlignment="Center" Height="35" VerticalAlignment="Center" Width="30" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="166.167" Canvas.Top="191.25" FontWeight="Bold" Click="but_retour_Click"/>
+            <TextBlock HorizontalAlignment="Center" Height="22.291" TextWrapping="Wrap" VerticalAlignment="Center" Width="280" Canvas.Left="20" Canvas.Top="6.709" Text="Réinitialiser votre mot de passe " Background="#FFFF304E" FontWeight="SemiBold" TextAlignment="Center" Foreground="White" TextDecorations="{x:Null}" Margin="0" Padding="0,0.5,0,0" FontSize="14.667"/>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="covoiturage.mail"
+	x:Name="Window"
+	Title="Envoyer un e-mail"
+	Width="410" Height="300" WindowStyle="ToolWindow">
+
+	<Grid x:Name="LayoutRoot" Background="#FFF7F7FA">
+        <TextBox x:Name="box_message" HorizontalAlignment="Left" Height="199" Margin="10,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="382" BorderBrush="#FF949294" Opacity="0.9" SpellCheck.IsEnabled="True" AcceptsReturn="True"/>
+		<TextBlock x:Name="txt_sujet" HorizontalAlignment="Left" Height="19" Margin="10,35.5,0,0" TextWrapping="Wrap" Text="SUJET" VerticalAlignment="Top" Width="39.875" Padding="0"/>
+		<TextBox x:Name="box_sujet" HorizontalAlignment="Left" Height="19" Margin="49.875,35.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342.125" BorderBrush="#FF949294" IsEnabled="False"/>
+		<Button x:Name="but_envoyer" Content="ENVOYER" HorizontalAlignment="Left" Height="20" Margin="327.5,10,0,0" VerticalAlignment="Top" Width="65" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Click="but_envoyer_Click"/>
+		<Button x:Name="but_annuler" Content="ANNULER" HorizontalAlignment="Left" Height="20" Margin="257.5,10,0,0" VerticalAlignment="Top" Width="65" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Click="but_annuler_Click"/>
+	</Grid>
+</Window>

@@ -1,0 +1,181 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="covoiturage.ajouterTrajet"
+	x:Name="Window"
+	Title="Ajouter un trajet"
+	Width="507.167" Height="338.667" WindowStyle="ToolWindow">
+
+	<Grid x:Name="LayoutRoot" Background="#FFF7F7FA">
+		<Path Data="M231.33333,47.333333 L569.34385,47.333333" Fill="#FFF4F4F5" Height="1" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Margin="-0.542,44,480.459,0" HorizontalAlignment="Right" Width="19.25"/>
+		<Canvas x:Name="depart" Margin="0,23.105,0,43.333" d:IsLocked="True" d:IsHidden="True">
+			<TextBlock x:Name="txt_depart" HorizontalAlignment="Left" Height="36.634" TextWrapping="Wrap" Text="Adresse de départ" VerticalAlignment="Top" Width="228.334" FontSize="26.667" RenderTransformOrigin="0.5,0.5" Canvas.Left="18.333">
+				<TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform AngleY="0.218"/>
+						<RotateTransform/>
+						<TranslateTransform Y="0.33"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform>
+			</TextBlock>
+			<Path Data="M231.33333,47.333333 L569.34385,47.333333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="260.501" Canvas.Left="238.666" Canvas.Top="20.942"/>
+			<TextBox x:Name="box_depart_adress" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="64.979" Width="250" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_depart_cp" Height="22.667" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="211.062" Width="80" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_depart_ville" Height="22.667" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="159.978" Width="200" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_depart_numero" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="89.979" Width="50" Margin="0,20,0,0" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<Button x:Name="but_suivant_dep" Content="SUIVANT" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="386.667" Canvas.Top="244.895" Click="but_suivant_dep_Click"/>
+			<Button x:Name="but_annuler" Content="ANNULER" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="281.667" Canvas.Top="244.895" Click="but_annuler_Click"/>
+		</Canvas>
+		<Canvas x:Name="destination" Margin="0,23.105,0,43.333" Visibility="Hidden" d:IsLocked="True">
+			<TextBlock x:Name="txt_destination" HorizontalAlignment="Left" Height="36.634" TextWrapping="Wrap" VerticalAlignment="Top" Width="315.834" FontSize="26.667" RenderTransformOrigin="0.5,0.5" Canvas.Left="18.333" Canvas.Top="0.166"><TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform AngleY="0.218"/>
+						<RotateTransform/>
+						<TranslateTransform Y="0.33"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform><Run Text="Adresse de "/><Run Text="dest"/><Run Text="ination"/></TextBlock>
+			<Path Data="M231.33333,47.333333 L569.34385,47.333333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="208.501" Canvas.Left="290.666" Canvas.Top="20.942"/>
+			<TextBox x:Name="box_desti_adress" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="64.979" Width="250" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_desti_cp" Height="22.667" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="211.062" Width="80" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_desti_ville" Height="22.667" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="159.978" Width="200" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_desti_numero" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="89.979" Width="50" Margin="0,20,0,0" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<Button x:Name="but_retour_destination" Content="RETOUR" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="281.667" Canvas.Top="244.895" Click="but_retour_destination_Click"/>
+            <Button x:Name="but_suivant_desti" Content="SUIVANT" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="386.667" Canvas.Top="244.895" Click="but_suivant_desti_Click"/>
+		</Canvas>
+		<Canvas x:Name="voiture" Margin="0,23.105,0,43.333" Visibility="Hidden" d:IsLocked="True">
+			<Path Data="M231.33333,47.333333 L569.34385,47.333333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="318.001" Canvas.Left="181.166" Canvas.Top="20.942"/>
+			<TextBlock x:Name="txt_voiture" HorizontalAlignment="Left" Height="36.634" TextWrapping="Wrap" VerticalAlignment="Top" Width="157.334" FontSize="26.667" RenderTransformOrigin="0.5,0.5" Canvas.Left="18.333" Canvas.Top="-0.136" Text="Votre voiture"><TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform AngleY="0.218"/>
+						<RotateTransform/>
+						<TranslateTransform Y="0.33"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="txt_nbrPlace" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="NOMBRE DE PLACE" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="64.979"/>
+			<TextBlock x:Name="txt_nbrLitre" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="109.979"><Run Text="NOMBRE DE "/><Run Text="LITRE"/></TextBlock>
+			<TextBlock x:Name="txt_km" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Padding="0,4,0,0" Canvas.Top="109.979" Canvas.Left="187"><Run Text="/"/><Run Text=" "/><Run Text="100km"/></TextBlock>
+			<TextBox x:Name="box_nbrPlace" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="64.979" Width="50" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<TextBox x:Name="box_nbrLitre" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="89.979" Width="50" Margin="0,20,0,0" TextAlignment="Center" BorderBrush="#FF949294"/>
+			<Button x:Name="but_suivant_info" Content="SUIVANT" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="386.667" Canvas.Top="244.895" Click="but_suivant_info_Click"/>
+			<Button x:Name="but_retour_voiture" Content="RETOUR" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="281.667" Canvas.Top="244.895" Click="but_retour_voiture_Click"/>
+			<TextBlock x:Name="txt_carburant" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="155.979" Text="CARBURANT"/>
+			 <ComboBox x:Name="box_carburant" Height="25" Canvas.Left="133.047" Canvas.Top="155.784" Width="96.935">
+				<ComboBoxItem Content="Super 95"></ComboBoxItem>  
+				<ComboBoxItem Content="Super 98"></ComboBoxItem>  
+				<ComboBoxItem Content="Diesel"></ComboBoxItem>  
+			</ComboBox>
+		</Canvas>
+		<Canvas x:Name="information" Margin="0,23.105,0,43.333" Visibility="Hidden" d:IsLocked="True">
+			<Path Data="M231.33333,47.333333 L569.34385,47.333333" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="1" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="296.501" Canvas.Left="202.666" Canvas.Top="20.942"/>
+			<TextBlock x:Name="txt_voiture1" HorizontalAlignment="Left" Height="36.634" TextWrapping="Wrap" VerticalAlignment="Top" Width="187.834" FontSize="26.667" RenderTransformOrigin="0.5,0.5" Canvas.Left="18.333" Canvas.Top="-0.078" Text="INFORMATION"><TextBlock.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform AngleY="0.218"/>
+						<RotateTransform/>
+						<TranslateTransform Y="0.33"/>
+					</TransformGroup>
+				</TextBlock.RenderTransform></TextBlock>
+			<TextBlock x:Name="txt_nbrPlace1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="HEURE DE DEPART" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="64.979"/>
+			<TextBlock x:Name="txt_nbrLitre1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="134.979" Text="DISTANCE" Margin="0,20,0,0"/>
+			<TextBlock x:Name="txt_km1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Padding="0,4,0,0" Canvas.Top="132.979" Canvas.Left="187" Text="km" Margin="0,20,0,0"/>
+			<TextBox x:Name="box_km" Height="25" Canvas.Left="132" TextWrapping="Wrap" Canvas.Top="132.979" Width="50" TextAlignment="Center" BorderBrush="#FF949294" Margin="0,20,0,0"/>
+			<Button x:Name="but_terminer" Content="TERMINER" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FFFF304E" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="386.667" Canvas.Top="244.895" Click="but_terminer_Click"/>
+			<DatePicker x:Name="box_date_depart" Height="24.418" Canvas.Left="247.555" Canvas.Top="64.979" Width="160.5"/>
+			<TextBlock x:Name="txt_nbrPlace1_Copy" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextAlignment="Right" Padding="0,4,0,0" Canvas.Top="89.979" Margin="0,20,0,0"><Run Text="HEURE "/><Run Text="D'ARRIVÉE"/></TextBlock>
+			<DatePicker x:Name="box_date_arrivee" Height="24.418" Canvas.Left="247.555" Canvas.Top="109.979" Width="160.5"/>
+            <Button x:Name="but_retour_info" Content="RETOUR" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="100" Background="#FF04868C" BorderBrush="{x:Null}" Foreground="White" Canvas.Left="281.667" Canvas.Top="244.895" Click="but_retour_info_Click"/>
+            <TextBlock Height="28.333" Canvas.Left="179.58" TextWrapping="Wrap" Text=":" Canvas.Top="59.562" Width="10.001" FontSize="21.333" FontWeight="Bold"/>
+            <TextBlock Height="28.333" Canvas.Left="179.58" TextWrapping="Wrap" Text=":" Canvas.Top="104.517" Width="10.001" FontSize="21.333" FontWeight="Bold"/>
+            <ComboBox x:Name="box_heure_depart" Height="25" Canvas.Left="133.047" Canvas.Top="65.284" Width="40.185">
+				<ComboBoxItem Content="0"></ComboBoxItem>  
+				<ComboBoxItem Content="1"></ComboBoxItem>  
+				<ComboBoxItem Content="2"></ComboBoxItem>  
+				<ComboBoxItem Content="3"></ComboBoxItem>  
+				<ComboBoxItem Content="4"></ComboBoxItem>  
+				<ComboBoxItem Content="5"></ComboBoxItem>
+				<ComboBoxItem Content="6"></ComboBoxItem> 
+				<ComboBoxItem Content="7"></ComboBoxItem> 
+				<ComboBoxItem Content="8"></ComboBoxItem> 
+				<ComboBoxItem Content="9"></ComboBoxItem> 
+				<ComboBoxItem Content="10"></ComboBoxItem> 
+				<ComboBoxItem Content="11"></ComboBoxItem> 
+				<ComboBoxItem Content="12"></ComboBoxItem> 
+				<ComboBoxItem Content="13"></ComboBoxItem> 
+				<ComboBoxItem Content="14"></ComboBoxItem> 
+				<ComboBoxItem Content="15"></ComboBoxItem> 
+				<ComboBoxItem Content="16"></ComboBoxItem> 
+				<ComboBoxItem Content="17"></ComboBoxItem> 
+				<ComboBoxItem Content="18"></ComboBoxItem> 
+				<ComboBoxItem Content="19"></ComboBoxItem> 
+				<ComboBoxItem Content="20"></ComboBoxItem> 
+				<ComboBoxItem Content="21"></ComboBoxItem> 
+				<ComboBoxItem Content="22"></ComboBoxItem> 
+				<ComboBoxItem Content="23"></ComboBoxItem>  
+			</ComboBox>
+            <ComboBox x:Name="box_heure_arrivee" Height="25" Canvas.Left="132" Canvas.Top="109.895" Width="40.185">
+            	<ComboBoxItem Content="0"/>  
+            	<ComboBoxItem Content="1"/>  
+            	<ComboBoxItem Content="2"/>  
+            	<ComboBoxItem Content="3"/>  
+            	<ComboBoxItem Content="4"/>  
+            	<ComboBoxItem Content="5"/>
+            	<ComboBoxItem Content="6"/> 
+            	<ComboBoxItem Content="7"/> 
+            	<ComboBoxItem Content="8"/> 
+            	<ComboBoxItem Content="9"/> 
+            	<ComboBoxItem Content="10"/> 
+            	<ComboBoxItem Content="11"/> 
+            	<ComboBoxItem Content="12"/> 
+            	<ComboBoxItem Content="13"/> 
+            	<ComboBoxItem Content="14"/> 
+            	<ComboBoxItem Content="15"/> 
+            	<ComboBoxItem Content="16"/> 
+            	<ComboBoxItem Content="17"/> 
+            	<ComboBoxItem Content="18"/> 
+            	<ComboBoxItem Content="19"/> 
+            	<ComboBoxItem Content="20"/> 
+            	<ComboBoxItem Content="21"/> 
+            	<ComboBoxItem Content="22"/> 
+            	<ComboBoxItem Content="23"/>  
+            </ComboBox>
+            <ComboBox x:Name="box_minute_depart" Height="25" Canvas.Left="192" Canvas.Top="64.895" Width="40.185">
+            	<ComboBoxItem Content="0"/>  
+            	<ComboBoxItem Content="5"/>
+            	<ComboBoxItem Content="10"/> 
+            	<ComboBoxItem Content="15"/> 
+            	<ComboBoxItem Content="20"/> 
+            	<ComboBoxItem Content="25"/> 
+            	<ComboBoxItem Content="30"/> 
+            	<ComboBoxItem Content="35"/> 
+            	<ComboBoxItem Content="40"/> 
+            	<ComboBoxItem Content="45"/> 
+            	<ComboBoxItem Content="50"/> 
+            	<ComboBoxItem Content="55"/>  
+            </ComboBox>
+            <ComboBox x:Name="box_minute_arrivee" Height="25" Canvas.Left="192" Canvas.Top="109.979" Width="40.185">
+            	<ComboBoxItem Content="0"/>  
+            	<ComboBoxItem Content="5"/>
+            	<ComboBoxItem Content="10"/> 
+            	<ComboBoxItem Content="15"/> 
+            	<ComboBoxItem Content="20"/> 
+            	<ComboBoxItem Content="25"/> 
+            	<ComboBoxItem Content="30"/> 
+            	<ComboBoxItem Content="35"/> 
+            	<ComboBoxItem Content="40"/> 
+            	<ComboBoxItem Content="45"/> 
+            	<ComboBoxItem Content="50"/> 
+            	<ComboBoxItem Content="55"/>  
+            </ComboBox>
+        </Canvas>
+		<Canvas x:Name="text_information" Margin="10,88.666,367.167,10" d:IsLocked="True">
+			<TextBlock x:Name="txt_adress" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="ADRESSE" VerticalAlignment="Top" Width="100" TextAlignment="Right" Padding="0,4,0,0"/>
+			<TextBlock x:Name="txt_numero" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="NUMERO" VerticalAlignment="Top" Width="100" Canvas.Top="47.383" TextAlignment="Right" Padding="0,4,0,0"/>
+			<TextBlock x:Name="txt_ville" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="VILLE" VerticalAlignment="Top" Width="100" Canvas.Top="93.383" TextAlignment="Right" Padding="0,4,0,0"/>
+			<TextBlock x:Name="txt_cp" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="CODE POSTAL" VerticalAlignment="Top" Width="100" Canvas.Top="144.25" TextAlignment="Right" Padding="0,4,0,0"/>
+		</Canvas>
+	</Grid>
+</Window>
